@@ -1,4 +1,4 @@
-const cardCollection = [{foto : "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg", title : "hond", answer : "dog"}, 
+const cardCollection = [{foto : "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg", title : "dog", answer : "hond"}, 
                         {foto : "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/erik-jan-leusink-561776-unsplash-1539591981.jpg?resize=480:*", title : "kat", answer : "cat"}, 
                         {foto : "https://upload.wikimedia.org/wikipedia/commons/5/54/Mexican_wolf_lounging.jpg", title : "wolf", answer : "wolk"}, 
                         {foto : "https://www.nps.gov/lacl/learn/nature/images/Image-w-cred-cap_-1200w_-Animals-page_-Red-Fox-head-profile_2.jpg?maxwidth=1200&maxheight=1200&autorotate=false", title: "fox", answer : "vos"}, 
@@ -33,6 +33,40 @@ function getResults() {
             document.getElementById("answer").innerHTML = cardCollection[i].answer;
         }
     }
+}
+
+function addQuestion() {
+    let form =document.createElement('form')
+    document.getElementById('formSection').appendChild(form)
+    let inputUrl = document.createElement('input')
+    inputUrl.placeholder = 'Enter your URL'
+    inputUrl.type = 'text';
+    inputUrl.id = 'url'
+    form.appendChild(inputUrl);
+
+    let inputTitle= document.createElement('input')
+    inputTitle.placeholder = 'Enter the word in English'
+    inputTitle.type = 'text';
+    inputTitle.id = 'title'
+    form.appendChild(inputTitle);
+
+    let inputAnswer = document.createElement('input')
+    inputAnswer.placeholder = 'Enter the dutch version'
+    inputAnswer.type = 'text';
+    inputAnswer.id = 'answer'
+    form.appendChild(inputAnswer);
+
+    let inputButton = document.createElement('button')
+    inputButton.innerHTML = 'Add New Flash Card'
+    form.appendChild(inputButton)
+    inputButton.addEventListener('click', addFlashCard())
+    
+    
+    
+    
+    let newObject = {};;
+
+
 }
 // function submitAnswer() {
 //     
