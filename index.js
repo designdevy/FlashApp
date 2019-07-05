@@ -6,9 +6,9 @@ let cardCollection = [{ foto: "https://cdn.pixabay.com/photo/2017/09/25/13/12/do
 { foto: "https://live.staticflickr.com/7193/6908555819_5919b910e8_b.jpghttps://live.staticflickr.com/7193/6908555819_5919b910e8_b.jpg", category: "plants", title: "grass", answer: "grass" },
 { foto: "https://cdn12.picryl.com/photo/2016/12/31/cluster-flowers-little-flower-nature-landscapes-4027ad-1024.jpg", category: "plants", title: "flower", answer: "bloem" }];
 
+const cardGallery = document.getElementById("imgQuestion");
 
 function displayImage() {
-    const cardGallery = document.getElementById("imgQuestion");
     cardGallery.innerHTML = null;
     document.getElementById("answerName").innerHTML = null;
     let randomNumber = Math.floor(Math.random() * ((cardCollection.length - 1) + 1));
@@ -59,7 +59,7 @@ function addQuestion() {
     inputButton.id = 'createObject';
     inputButton.innerHTML = 'Add New Flash Card';
     form.appendChild(inputButton);
-    inputButton.addEventListener('click', addFlashCard);     
+    inputButton.addEventListener('click', addFlashCard);
 }
 
 function addFlashCard(event) {
@@ -68,7 +68,25 @@ function addFlashCard(event) {
     newObject.foto = document.getElementById('url').value;
     newObject.title = document.getElementById('title').value;
     newObject.answer = document.getElementById('answer').value;
+    newObject.category = "custom-cards";
     cardCollection.push(newObject)
 }
+
+
+// function sortAnimals() {
+//     for (let j in listAnimals) {
+//         if (cardCollection[j].category == "animal") {
+            
+//         }
+//     }
+// }
+
+// function sortPlants() {
+
+// }
+
+// function sortCustom() {
+
+// }
 
 displayImage()
