@@ -9,20 +9,31 @@ const cardCollection = [{foto : "https://cdn.pixabay.com/photo/2017/09/25/13/12/
 displayImage()
 
 function displayImage() {
+    const cardGallery = document.getElementById("imgQuestion");
+    cardGallery.innerHTML = null;
+    document.getElementById("answer").innerHTML = null;
     let randomNumber = Math.floor(Math.random()*((cardCollection.length - 1) + 1));
-    console.log(randomNumber);
-    const cardGallery = document.getElementById("card");
     let link = cardCollection[randomNumber].foto;
 
     // adjusting elements
     let img = document.createElement('img');
     img.src = link;
     img.alt = cardCollection[randomNumber].title;
+    img.id = "image";
 
     // displaying elements
     cardGallery.appendChild(img);
+
+    //display variants
 }
 
+function getResults() {
+    for (let i = 0; i < cardCollection.length; i++) {
+        if (document.getElementById("image").src == cardCollection[i].foto) {
+            document.getElementById("answer").innerHTML = cardCollection[i].answer;
+        }
+    }
+}
 // function submitAnswer() {
 //     
 // }
