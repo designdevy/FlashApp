@@ -1,0 +1,17 @@
+body{
+    background: #FFBA00;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
+    width : 100%;
+ 
+ }
+ 
+ main{
+    background: white;
+    margin: auto;
+    border-radius: 5px;
+    padding: 2rem 0;
+ }
